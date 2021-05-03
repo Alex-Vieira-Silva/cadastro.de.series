@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\cadastro.de.series\\cadastro.de.series.csproj",
+      "projectUniqueName": "C:\\Users\\Alex_vs\\Documents\\projeto\\cadastro.de.series\\cadastro.de.series.csproj",
       "projectName": "cadastro.de.series",
-      "projectPath": "C:\\workspace\\cadastro.de.series\\cadastro.de.series.csproj",
+      "projectPath": "C:\\Users\\Alex_vs\\Documents\\projeto\\cadastro.de.series\\cadastro.de.series.csproj",
       "packagesPath": "C:\\Users\\Alex_vs\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\cadastro.de.series\\obj\\",
+      "outputPath": "C:\\Users\\Alex_vs\\Documents\\projeto\\cadastro.de.series\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alex_vs\\AppData\\Roaming\\NuGet\\NuGet.Config"

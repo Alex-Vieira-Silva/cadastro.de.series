@@ -45,6 +45,8 @@ namespace cadastro.de.series
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
+
+                    escolherusuario = OpcaoUsuario();
                 }
 
                 Console.WriteLine("Obrigado por utilizar os nossos serviços.");
@@ -52,6 +54,7 @@ namespace cadastro.de.series
 
              static string OpcaoUsuario()
             {
+                string obeterusuario;
                 Console.WriteLine();
                 Console.WriteLine("-------------Lg Series - Cadastro de Series--------------");
                 Console.WriteLine();
@@ -65,9 +68,10 @@ namespace cadastro.de.series
                 Console.WriteLine("6 - Limpar Tela");
                 Console.WriteLine("x - sair");
 
-                string obeterusuario = Console.ReadLine().ToUpper();
+                obeterusuario = Console.ReadLine().ToUpper();
                 Console.WriteLine();
                 return obeterusuario;
+                
 
             }
 
@@ -85,18 +89,16 @@ namespace cadastro.de.series
 
                 Console.Write("Digite o Título da Série: ");
                 string entrada_Titulo = Console.ReadLine();
-
                 Console.Write("Digite o Ano de Início da Série: ");
                 int entrada_Ano = int.Parse(Console.ReadLine());
-
                 Console.Write("Digite a Descrição da Série: ");
                 string entrada_Descricao = Console.ReadLine();
 
-                Serie novaSerie = new Serie(id: repositorio.ProximoId(),
-                                            genero: (Genero)entrada_Genero,
-                                            titulo: entrada_Titulo,
-                                            ano: entrada_Ano,
-                                            descricao: entrada_Descricao);
+                Serie novaSerie = new Serie(_id: repositorio.ProximoId(),
+                                            _genero: (Genero)entrada_Genero,
+                                           _titulo: entrada_Titulo,
+                                            _ano: entrada_Ano,
+                                            _descricao: entrada_Descricao);
 
                 repositorio.Enserir(novaSerie);
                 
@@ -124,11 +126,11 @@ namespace cadastro.de.series
                 Console.Write("Digite a Descrição da Série: ");
                 string entrada_Descricao = Console.ReadLine();
 
-                Serie atualiza_Serie = new Serie(id: indice_Serie,
-                                            genero: (Genero)entrada_Genero,
-                                            titulo: entrada_Titulo,
-                                            descricao: entrada_Descricao,
-                                            ano: entrada_Ano
+                Serie atualiza_Serie = new Serie(_id: indice_Serie,
+                                            _genero: (Genero)entrada_Genero,
+                                            _titulo: entrada_Titulo,
+                                            _descricao: entrada_Descricao,
+                                            _ano: entrada_Ano
     
                                             );
 
@@ -146,7 +148,7 @@ namespace cadastro.de.series
              static void VisualizarSerie()
             {
                 Console.Write("Digite o id da serie: ");
-                int indiceSerie = int.Parse(Console.ReadLine());
+                int indice_Serie = int.Parse(Console.ReadLine());
 
                 var serie = repositorio.getId(indice_Serie);
 
@@ -169,7 +171,7 @@ namespace cadastro.de.series
                 {
                     var excluido = serie.getExcluido();
 
-                    Console.WriteLine("Id {0}: - {1}  {2}", serie.getId(), serie.getTitulo(), (excluido ? "*Excluído*" : ""));
+                    Console.WriteLine("Id {0}: - {1} {2}", serie.getId(), serie.getTitulo(), (excluido ? "*Excluído*" : ""));
                 }
             }
         }

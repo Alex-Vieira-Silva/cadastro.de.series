@@ -24,7 +24,7 @@ namespace Cadastro.De.Series
         public void Atualizar(int id, Serie entidade)
         {
             ListaSerie[id] = entidade;
-        }
+        } 
 
         public void Excluir(int id)
         {

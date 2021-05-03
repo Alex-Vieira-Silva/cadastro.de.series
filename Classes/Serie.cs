@@ -7,26 +7,16 @@ namespace Cadastro.De.Series
 {
     public class Serie : BaseConteudo
     {
-
-        public Serie(int id, Genero genero, string titulo, int ano, string descricao)
-        {
-
-        }
-
-        public Serie(Genero genero, string titulo, string descricao, int ano)
-        {
-            this.genero = genero;
-            this.titulo = titulo;
-            this.descricao = descricao;
-            this.ano = ano;
-
-        }
         private Genero genero { get; set; }
         private string titulo { get; set; }
         private string descricao { get; set; }
         private int ano { get; set; }
         private bool excluido { get; set;}
 
+        public Serie()
+        {
+
+        }
         public Serie(int _id, Genero _genero, string _titulo, string _descricao, int _ano)
         {
             this.id = _id;
@@ -38,14 +28,9 @@ namespace Cadastro.De.Series
 
         }
 
-        public Serie()
-        {
-        }
-
         public override string ToString()
         {
             string retorno = "";
-            retorno += "Id: " + this.id + Environment.NewLine;
             retorno += "Genero: " + this.genero + Environment.NewLine;
             retorno += "Titulo: " + this.titulo + Environment.NewLine;
             retorno += "Descricao: " + this.descricao + Environment.NewLine;
